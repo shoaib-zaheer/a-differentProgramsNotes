@@ -1,4 +1,6 @@
 
+[Javascript- to learn](https://janke-learning.org/)
+
 >// firstName <= This is camelCase <== Use for plain variables case
 >// MY_CONSTANT <= This is UPERCASE =>Constants
 >// lat_name <= snake_case =>Not a good practice
@@ -114,3 +116,65 @@ function roundabout(a, b) {
 
 const number1 = x;
 ````
+To call a function you have to write the, just we need to write the function name and ();
+````javascript
+function Ahmad=(x);
+
+`Ahmad();`
+````
+To check your JavaScript in python checker [click..](http://www.pythontutor.com/javascript.html#mode=display).
+
+#### Asserting & Comparisons
+
+````javascript
+// boolean values help to understand console.assert
+
+// if the first argument to console.assert is true, it passes
+console.assert(true);
+
+// if the first argument to console.assert is false, it fails
+console.assert(false);
+
+// the second argument is the message that will be displayed
+// this message must be wrapped in quotes (you'll learn why soon)
+console.assert(true, 'this assert passes');
+console.assert(false, 'this assert fails');
+
+// PS. open your browser's console!
+// In the console, only failing asserts are displayed.
+// this is the standard behavior for console.assert
+// these slides will also displays passing asserts to help you study
+
+````
+
+
+````javascript 
+
+// strict equality: ===
+
+// if two values are the same, === evalutes to true:
+console.assert(true === true, 'true === true');
+console.assert(false === false, 'false === false');
+
+// if they are not, it evaluates to false
+console.assert(true === false, 'true === false');
+console.assert(false === true, 'false === true');
+
+
+// strict inequality: !==
+
+// if two values are NOT the same, !== evalutes to true:
+console.assert(true !== false, 'true !== false');
+console.assert(false !== true, 'false !== true');
+
+// if they ARE the same, it evaluates to false
+console.assert(true !== true, 'true !== true');
+console.assert(false !== false, 'false !== false');
+
+
+// multiple comparisons are evaluated left to right
+console.assert((false === false) === true, 'false === false === true');
+console.assert((false === true) === true, 'false === true === true');
+console.assert((false !== true) === true, 'false !== true === true');
+console.assert((false === false) !== false, 'false === false !== false');
+`````
