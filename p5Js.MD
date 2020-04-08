@@ -60,10 +60,10 @@ if (mouseIsPressed){
   ellipse(mouseX, mouseY, 20, 20 );
 }
   }
-  ```
-	`Second`
+```
+`Second way of doing`
   
-  ```javascript
+```javascript
 let x = 200;
 let y = 200;
 let secondCanvas
@@ -93,7 +93,8 @@ function draw(){
   rect(x, y, 20, 20);
   // Trails    
   }
-  ```
+  
+```
   `Drawing star behide the main object in animation`
   
 ```javascript
@@ -129,4 +130,10 @@ function draw(){
   // Trails    
      image(secondCanvas, 0, 0); 
   }
-	```
+```
+### Introduction to Conditional Statements.
+
+```javascript
+
+```
+
