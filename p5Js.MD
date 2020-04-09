@@ -1,4 +1,4 @@
-#### p5Js
+# p5Js
 
 ```javascript
 
@@ -61,7 +61,7 @@ if (mouseIsPressed){
 }
   }
 ```
-`Second way of doing`
+#### Second way of doing
   
 ```javascript
 let x = 200;
@@ -131,8 +131,30 @@ function draw(){
      image(secondCanvas, 0, 0); 
   }
 ```
-### Introduction to Conditional Statements.
+#### Introduction to Conditional Statements.
 
+```javascript
+let x = 200;
+
+function setup(){
+    createCanvas(600, 400); 
+}
+let speed = +3;
+function draw(){
+    
+background(0);
+noFill();
+stroke(200);
+strokeWeight(3);
+ellipse(x, 200, 40, 40);
+    
+ if (x > width){
+    speed = -3;
+}
+x = x + speed;
+}
+```
+#### Else and Else if, AND and OR - p5.js
 ```javascript
 
 ```
