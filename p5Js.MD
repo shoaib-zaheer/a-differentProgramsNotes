@@ -156,6 +156,37 @@ x = x + speed;
 ```
 #### Else and Else if, AND and OR - p5.js
 ```javascript
+let x = 200;
+let secondCanvas
 
+function setup(){
+createCanvas(600, 400);
+    secondCanvas = createGraphics(600, 400);
+    secondCanvas.clear();
+    background(0);
+   
+}
+let speed = +2;
+function draw(){
+    
+    background(0);
+    
+    secondCanvas.fill(255, 150, 0, 90);
+    secondCanvas.noStroke();
+    let starX = random(width);
+    let starY = random(height);
+    secondCanvas.ellipse(starX, starY, 5, 5);
+    
+    noFill();
+    stroke(200);
+    strokeWeight(3);
+    ellipse(x, 200, 40, 40);
+    
+    if (x > width || x < 0){
+        speed = speed * -1;
+    }
+        x = x + speed;
+    image(secondCanvas, 0 ,0);
+    }
 ```
 
