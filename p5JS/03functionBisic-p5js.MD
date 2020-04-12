@@ -121,5 +121,3 @@ function milesToKm(miles){
     return(km)
 }
 ```
-```javascript
-```
