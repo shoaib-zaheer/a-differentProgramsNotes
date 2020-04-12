@@ -80,9 +80,44 @@ function display(){
 }
 
 ```
+### function Parameters and Arguments -p5.js
 ```javascript
+
+function setup() {
+    createCanvas(600, 400);
+}
+
+function draw(){
+
+background(50);
+    lollipop(300, 200, 50); // lollipop takes argument
+    lollipop(200, 100, 50);
+    lollipop(100, 50, 50);
+    lollipop(400, 100, 50);
+    lollipop(500, 50, 50);    
+}
+
+function lollipop(x, y, diameter){ // lollipop takes 3 parameter 
+    
+    fill (0, 200, 255);
+    rect(x -5, y, 10, 100);
+    
+    fill (255, 0, 150);
+    ellipse(x, y, diameter, diameter);
+}
 ```
+### Function and Return -p5.js
 ```javascript
-```
-```javascript
+
+function setup() {
+    let km = milesToKm(26.3);
+    console.log(km);
+    var km2 = milesToKm(100);
+    print(km2);
+}
+
+function milesToKm(miles){
+    let km = miles * 1.6;
+    return(km)
+}
 ```
