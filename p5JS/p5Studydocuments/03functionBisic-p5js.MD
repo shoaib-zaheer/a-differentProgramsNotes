@@ -13,6 +13,24 @@ why it is important to call or define your own function.
 
 
 ```javascript
+function setup (){
+    createCanvas(500, 600);
+}
+function draw(){
+    background(0);
+    stroke(255);
+    strokeWeight(4);
+    noFill();
+    ellipse(x , 200, 50, 50);
+
+    if (x > width){ // once it reached the end of canvas it should turn back.
+        x = x - 3; // but i is not working as at the end it turns but re draw back 3 px ahead and then 3 px back. (like loop).
+    }
+    x = x + 3; // it will print the ellipse every time by move it 3 px ahead of previous position.
+}
+```
+
+```javascript
 let ball = {
     x: 300,
     y: 200,
