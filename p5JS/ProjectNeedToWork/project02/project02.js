@@ -10,7 +10,6 @@ function setup(){
         drops[i] = new Drop(x, 200);
     }
 }
-
 function draw(){
     background(50);
     
@@ -20,16 +19,13 @@ function draw(){
     }
     
 }
-
 class Drop {
     
     constructor(x, y){
         this.x = random(x);
         this.y = random(y);
-        //this.s = tempS;
-        
+        //this.s = tempS;   
     }
-    
     object1(){
         stroke(random(100, 200));
         strokeWeight(random(1, 3)); // control the size
