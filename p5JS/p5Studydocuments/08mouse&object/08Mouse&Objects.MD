@@ -123,16 +123,99 @@ function mousePressed(){
     bubble.clicked();
 }
 
+class Bubble {
+    
+    clicked(){ 
+        let b = dist(mouseX, mouseY, this.x, this.y);
+        if (b < this.s){ // If the b is less then circle radius it will console.log will print the message.
+            console.log('The mouse has been clicked');
+        }
+
+```
+Let's push this mouse function in an `Array`.
+
+```javascript
+let bubbles = [];
+
+function setup(){
+    createCanvas(600, 600);
+    for (let i = 0; i < 5; i++){// adding loops of 5 bubble
+    let x = random(width)
+    let y = random(height)
+    let r = random(10, 50)
+    let b = new Bubble(x, y, r);
+    bubbles.push(b);// pushing b bubble in side array
+    }
+}
+
+function mousePressed(){// every bubble will react with mouse pressed
+        for (let i = 0; i < bubbles.length; i++){
+        bubbles[i].clicked();
+    }
+}
+
+function draw(){
+    background(0);
+    // loop of drawing the bubbles.
+    for (let i = 0; i < bubbles.length; i++){
+        bubbles[i].object1();
+        bubbles[i].move();
+    }
+}
+
+class Bubble {
+    
+    constructor(tempX, tempY, tempS){
+        this.x = tempX;
+        this.y = tempY;
+        this.s = tempS; 
+    }
+    
+    object1(){
+        stroke(255);
+        strokeWeight(3);
+        noFill();
+        ellipse(this.x, this.y, this.s * 2);
+    }
+    
     clicked(){
         let d = dist(mouseX, mouseY, this.x, this.y);
-        if (d < this.r) {
-        console.log('The mouse has been clicked');
+        if (d < this.s) {
+        console.log("The mouse has been clicked!");
         }
     }
-
+    
+    move(){
+        this.x = this.x + random (-5, 5);
+        this.y = this.y + random (-5, 5);
+}
+}
 ```
+To change the color for the bubbles you can use below setup.
 
 ```javascript
-```
-```javascript
+class Bubble {
+    
+    constructor(tempX, tempY, tempS){
+        this.x = tempX;
+        this.y = tempY;
+        this.s = tempS; 
+        this.brightness = 0; // for color value
+    }
+    
+    object1(){
+        stroke(255);
+        strokeWeight(3);
+        fill(this.brightness, 100);// fill the circle
+        ellipse(this.x, this.y, this.s * 2);
+    }
+    
+    clicked(){
+        let d = dist(mouseX, mouseY, this.x, this.y);
+        if (d < this.s) {
+        this.brightness = 255;// once the mouse is clicked.
+        }
+    }
+    
+}
 ```
