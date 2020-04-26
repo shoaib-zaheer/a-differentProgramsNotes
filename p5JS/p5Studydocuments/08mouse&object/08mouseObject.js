@@ -3,7 +3,7 @@ let bubbles = [];
 
 function setup(){
     createCanvas(1500, 900);
-    for (let i = 0; i < 100; i++){
+    for (let i = 0; i < 200; i++){
     let x = random(width)
     let y = random(height)
     let r = random(20, 50)
@@ -14,7 +14,7 @@ function setup(){
 
 function mousePressed(){
         for (let i = 0; i < bubbles.length; i++){
-        bubbles[i].clicked();
+        bubbles[i].clicked(mouseX, mouseY);
     }
 }
 
@@ -41,12 +41,13 @@ class Bubble {
     object1(){
         stroke(255);
         strokeWeight(3);
-        fill(this.R,this.G, this.B, 100);
+        // noStroke(); 
+        fill(this.R, this.G, this.B, 100);
         ellipse(this.x, this.y, this.s * 2);
     }
     
-    clicked(){
-        let d = dist(mouseX, mouseY, this.x, this.y);
+    clicked(px, py){
+        let d = dist(px, py, this.x, this.y);
         if (d < this.s) {
         this.R = random(1,255);
         this.G = random(1,255);

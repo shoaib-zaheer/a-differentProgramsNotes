@@ -219,3 +219,65 @@ class Bubble {
     
 }
 ```
+Drawing the same colorfully circles in `mouseX` & `mouseY`
+
+```javascript
+let bubbles = [];
+
+function setup(){
+    createCanvas(500, 500);
+}
+
+function mouseDragged(){
+    let x = mouseX;
+    let y = mouseY;
+    let r = random(20, 50);
+    let b = new Bubble(x, y, r);
+    bubbles.push(b);
+        for (let i = 0; i < bubbles.length; i++){// if you don't want colors just remove this for loop.
+        bubbles[i].clicked();
+    }
+}
+
+function draw(){
+    background(0);
+    
+    for (let i = 0; i < bubbles.length; i++){
+        bubbles[i].object1();
+        bubbles[i].move();
+    }
+}
+
+class Bubble {
+    
+    constructor(tempX, tempY, tempS){
+        this.x = tempX;
+        this.y = tempY;
+        this.s = tempS; 
+        this.R = 0;
+        this.G = 0;
+        this.B = 0;
+    }
+    
+    object1(){
+        stroke(255);
+        strokeWeight(3);
+        fill(this.R,this.G, this.B, 100);
+        ellipse(this.x, this.y, this.s * 2);
+    }
+    
+    clicked(){
+        let d = dist(mouseX, mouseY, this.x, this.y);
+        if (d < this.s) {
+        this.R = random(1,255);
+        this.G = random(1,255);
+        this.B = random(1,255);
+        }
+    }
+    
+    move(){
+        this.x = this.x + random (-5, 5);
+        this.y = this.y + random (-5, 5);
+}
+}
+```
