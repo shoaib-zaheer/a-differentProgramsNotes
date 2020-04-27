@@ -200,10 +200,77 @@ function mousePressed(){
             }
 }
 }
-
-
 ```
+You can play around with functions.
 
 ```javascript
+let bubbles = [];
 
+function setup(){
+    createCanvas(600, 600);
+   
+}
+
+
+function mouseDragged(){
+        let s = 30;
+        let b = new Bubble (mouseX, mouseY, s);
+        bubbles.push(b);
+    }
+
+
+function draw(){
+    background(0);
+    
+    for (let i = 0; i < bubbles.length; i++){
+            if(bubbles[i].rollover(mouseX, mouseY)){
+             bubbles[i].changeColor(255);
+            }else{
+                bubbles[i].changeColor(0);
+            }
+                bubbles[i].object1();
+            bubbles[i].move();
+}
+    if (bubbles.length > 50){
+        bubbles.splice (0, 1);
+    }
+}
+
+class Bubble {
+    
+    constructor(tempX, tempY, tempS){
+        this.x = tempX;
+        this.y = tempY;
+        this.s = tempS; 
+        this.brightness = 0;
+    }
+    
+    object1(){
+        stroke(255);
+        strokeWeight(3);
+        noFill();
+//        noStroke();
+        fill(this.brightness, 100);// 250 for R G B and 10 is for blur ness. 
+        ellipse(this.x, this.y, this.s * 2);
+    }
+    
+    changeColor(bright){
+        this.brightness = bright;
+    }
+    
+    rollover(px, py){
+        
+        let d = dist(px, py, this.x, this.y);
+        if (d < this.s){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    move(){  
+        this.x = this.x + random (-5, 5);
+        this.y = this.y + random (-5, 5);
+}
+}
 ```
