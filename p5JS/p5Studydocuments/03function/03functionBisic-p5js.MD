@@ -13,6 +13,8 @@ why it is important to call or define your own function.
 
 
 ```javascript
+
+let x = 0;
 function setup (){
     createCanvas(500, 600);
 }

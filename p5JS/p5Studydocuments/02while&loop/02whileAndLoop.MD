@@ -59,8 +59,8 @@ function draw(){
     noStroke();
     
     for (let x = 0; x <= mouseX; x += 50){
-        for (y = 0; y <= height; y += 50){     
-      fill(random(200), 50, random (5));
+        for (let y = 0; y <= height; y += 50){     
+      fill(random(200), 50, random (255));
       ellipse(x, y, 50, 50);
   }
  }   
@@ -86,13 +86,5 @@ function draw(){
   }
  }   
 }
-
-```
-
-```javascript
-
-```
-
-```javascript
 
 ```
