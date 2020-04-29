@@ -281,3 +281,9 @@ class Bubble {
 }
 }
 ```
+Also you can make `function mousePressed (){}` so when ever the mouse has been clicked over the shape it may change its color.
+
+```javascript
+
+
+```
