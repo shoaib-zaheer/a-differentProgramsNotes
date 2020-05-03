@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Scoped CSS Variables and JS</title>
+    </head>
+    <body>
+        <div class="text" >
+            <h1>Update CSS Variables with <span>JS</span></h1>
+        </div>
+        <div class="variables">
+            Spacing: <input type="range" min="10" max="120" value="10" class="slider" id="spacing" oninput="setSpacing()">
+            Blur: <input type="range" min="0" max="100" value="0" class="slider" id="blur" oninput="setBlur()">
+            Base Color: <input type="color" value="#ffcc00" id="color" style="width: 100px;" onchange="setColor()">
+        </div>
+        <div class="img-container">
+            <img src="image.jpg">
+        </div>
+
+        <style>
+            html, body{
+                background-color: #012c3d;
+                color: white;
+                font-family: sans-serif;
+                text-align: center;
+                padding-bottom: 2rem;
+            }
+
+            h1 {
+                font-size: 5rem;
+            }
+
+            .variables {
+                margin: 1rem;
+                font-weight: 100;
+                font-size: 2.2rem;
+            }
+
+            img {
+                border: 10px solid #ffcc00;
+                filter: blur(0px); 
+            }
+
+            span {
+                color: #ffcc00;
+            }
+        </style>
+
+        <script>
+            function setColor(){
+                // Change the image's border and the span color
+                var image = document.querySelector('img');
+                var span = document.querySelector('span');
+                var color = document.querySelector(`input[type='color']`).value;
+                image.style.borderColor = color;
+                span.style.color = color;
+                console.log(color);
+            }
+
+            function setSpacing(){
+                var image = document.querySelector('img');
+                var size = document.getElementById('spacing').value;
+                image.style.borderWidth = `${size}px`;
+            }
+
+            function setBlur(){
+                var image = document.querySelector('img');
+                var blur = document.getElementById('blur').value / 10;
+                image.style.filter = `blur(${blur}px)`;
+            }
+        </script>
+    </body>
+</html>

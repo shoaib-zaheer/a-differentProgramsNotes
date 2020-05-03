@@ -7,7 +7,7 @@ let bubbles = [];
 //let afBubble;
 function setup(){
     createCanvas(600, 600);
-    for (let i = 0; i < 10; i++){
+    for (let i = Number(false); i < 10; i++){
         let x = random(width);
         let y = random(height);
         let s = random (10, 50);
@@ -17,8 +17,8 @@ function setup(){
 }
 
 function draw(){
-    background(0);
-    
+    background(Number(false));// Number(false) mean 0.
+    // Number(true) mean 1.
 //    afBubble.x = mouseX;
 //    afBubble.y = mouseY;
 //    afBubble.object1();
