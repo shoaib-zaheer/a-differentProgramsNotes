@@ -8,3 +8,4 @@
 
 -[`Full Screen Image Slider With HTML, CSS & JS`](https://www.youtube.com/watch?v=7ZO2RTMNSAY).
 
+-[`Portfolio Gallery Filter in Javascript`](https://www.youtube.com/watch?v=icZRbxwHQ4s)
