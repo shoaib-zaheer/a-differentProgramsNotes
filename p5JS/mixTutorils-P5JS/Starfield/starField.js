@@ -44,19 +44,19 @@ class Star{
         fill(255);
         noStroke();
         
-        let tempx = map(this.x / this.z, 0, 1, 0, width);
-        let tempy = map(this.y / this.z, 0, 1, 0, height);
+        let tempX = map((this.x / this.z) * 2, 0, 1, 0, width);
+        let tempY = map((this.y / this.z) * 2, 0, 1, 0, height);
         let r = map(this.z, 0, width, 5 , 0);
         
-        ellipse(tempx, tempy, r, r);
+        ellipse(tempX, tempY, r, r);
         
         
-        let sx = map(this.x / this.pz, 0, 1, 0, width);
-        let sy = map(this.y / this.pz, 0, 1, 0, height);
+        let sx = map((this.x / this.pz) * 2, 0, 1.1, 0, width);
+        let sy = map((this.y / this.pz) * 2, 0, 1.1, 0, height);
         
         this.pz = this.z;
         
         stroke(255);
-        line(sx, sy, tempx, tempy);
+        line(sx, sy, tempX, tempY);
     }
 }
