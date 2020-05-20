@@ -12,6 +12,8 @@
 
 -[`ReadMore about CSS`](https://www.taniarascia.com/overview-of-css-concepts/#css-syntax).
 
+- [`CSS Grid Layout With Image Span`](https://www.youtube.com/watch?v=-qOe8lBAChE)
+
 -[`Student guide HYF`](https://study.hackyourfuture.be/)
 
 #### Flex-Box
