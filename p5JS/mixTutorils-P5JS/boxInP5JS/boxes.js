@@ -1,8 +1,13 @@
-
-function setup(){
-  createCanvas(500, 500)
+function setup() {
+  createCanvas(400, 400, WEBGL);
 }
 
-function draw(){
-  background(0);
+function draw() {
+  background(51);
+  
+  stroke(200);
+  noFill();
+  rotateX(frameCount * 0.01);
+  rotateY(frameCount * 0.01);
+  box(100);
 }
