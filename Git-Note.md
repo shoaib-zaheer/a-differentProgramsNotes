@@ -11,3 +11,8 @@
 **`$ git merge origin/master`**
 You might see a conflict in here,
 if so you have to open the files and solve the conflict and then push.
+
+**`$ git log`** // to check commit in repo.
+**`$ git log`** —online // to check repo commit in one line.
+**`$ git checkout 2d63d7`** // to see the specific commit change.
+**`$ git revert 2d63d7`** // to undo a commit in repo.
