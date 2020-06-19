@@ -64,6 +64,93 @@ class Counter {
 }
 
 ```
+but if we want to do it as per below, with traditional `function` it will make error but not with arrow `function`.
+
+```javascript 
+
+let counter1;
+
+function setup (){
+  noCanvas();
+  console.log(this);
+  counter1 = new Counter(100, 500);//start at 100 and count every 500 millisecond
+}
+
+class Counter {
+
+  constructor (start, wait) {
+
+    this.count = start;
+    this. p = createP('');
+    console.log(this);
+    setInterval (countIt, wait);// it is callback
+    
+    function countIt() {
+      console.log(this);
+      this.count++;
+      this.p.html(this.count);
+  
+    }
+  }
+}
+```
+Now if we change it to arrow `function`
+
+```javascript
+function setup (){
+  noCanvas();
+  console.log(this);
+  const counter1 = new Counter(0, 10);//start at 100 and count every 500 millisecond
+  const counter2 = new Counter(500, 50);
+  const counter3 = new Counter(1000, 100);
+
+}
+
+class Counter {
+
+  constructor (start, wait) {
+
+    this.count = start;
+    this. p = createP('');
+    console.log(this);
+    setInterval (() => { 
+      console.log(this); 
+      this.count++; 
+      this.p.html(this.count); 
+    });// it is callback 
+  }
+}
+
+```
+**Second** way of writing the same `function` & code.
+```javascript 
+function setup (){
+  noCanvas();
+  console.log(this);
+  const counter1 = new Counter(500, 1000);//start at 100 and count every 500 millisecond
+  counter1.start();
+  const counter2 = new Counter(200, 500);
+  counter2.start();
+  const counter3 = new Counter(100, 200);
+  counter3.start();
+}
+
+class Counter {
+  constructor (start, wait) {
+    this.count = start;
+    this.wait = wait;
+    this. p = createP('');
+  }
+
+  start(){
+      setInterval (() => this.countIt(), this.wait);
+  }
+      countIt() {
+      this.count++; 
+      this.p.html(this.count); 
+      }
+}
+```
 
 
 
