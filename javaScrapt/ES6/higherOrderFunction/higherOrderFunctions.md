@@ -23,6 +23,7 @@ map();
 sort();
 reduce();
 filter();
+fill();
 ``` 
 ![Pic](higherOrderFunction.jpg)
 ###### passing a function to a function or returning function to a function.
@@ -49,7 +50,7 @@ return x * factor;
 
 multiplier (9, 9);
 ```
-what if we write a function to return a function.
+What if we write a function to return a function.
 ```javascript
 function multiplier (factor){
   return function (x){
@@ -63,6 +64,23 @@ console.log(double(2));
 // 4
 console.log(triple(2));
 // 6
+```
+using arrow function to write the same above code
+
+```javascript 
+function multiplier (factor){
+  x => x * factor;
+}
+let double = multiplier(2);
+let triple = multiplier(3);
+```
+```javascript 
+
+const multiplier = factor => x => x * factor;
+
+let double = multiplier(2);
+let triple = multiplier(3);
+
 ```
 
 
