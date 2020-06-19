@@ -24,11 +24,47 @@ sort();
 reduce();
 filter();
 ``` 
+![Pic](higherOrderFunction.jpg)
 ###### passing a function to a function or returning function to a function.
 
 ```javascript 
+function sing(callback){
+  console.log ('la la la la');
+ callback();
+}
 
+function dog (){
+  console.log ('wof wof wof');
+}
+
+//giving the dog function to sing and then execute the dog function.
+
+console.log (sing(dog));
 ```
+```javascript 
+function multiplier (x, factor){
+return x * factor;
+}
+// in console
+
+multiplier (9, 9);
+```
+what if we write a function to return a function.
+```javascript
+function multiplier (factor){
+  return function (x){
+  return x * factor;
+  }
+}
+let double = multiplier(2);
+let triple = multiplier(3);
+
+console.log(double(2));
+// 4
+console.log(triple(2));
+// 6
+```
+
 
 > The syntax is not the only difference between arrow and regular functions. An arrow function does not create its own context, while regular ones do. This is something important to keep in mind.
 
