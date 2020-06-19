@@ -152,8 +152,4 @@ class Counter {
 }
 ```
 
-
-
-
-
 [*ReadMore*](https://www.youtube.com/watch?v=mrYMzpbFz18)
